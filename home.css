@@ -1,0 +1,107 @@
+#searchDiv {
+  margin-left: 960px;
+}
+body {
+  font-family: "Times New Roman", Georgia, Serif;
+  font-size: 20px;
+}
+.container {
+  position: relative;
+}
+.text-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(20px);
+  padding: 3rem !important;
+  color: aliceblue;
+}
+#heroContainer {
+  margin: 0 auto;
+}
+#img {
+  max-width: 100% !important;
+}
+#traveler {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#paragraphs {
+  margin-left: 40px;
+  padding-right: 40px;
+  /* max-width: 100%; */
+}
+nav li {
+  padding: 10px;
+}
+/*filter beer CSS*/
+.showImg {
+  height: 600px;
+  vertical-align: middle;
+}
+.margin-right {
+  margin-right: 300px;
+  margin-top: 20px;
+}
+.cardHeader {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
+
+.card-footer {
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin-top: 20px;
+  /* margin-right: -150px; */
+}
+.item-grid {
+  grid-template-columns: repeat(2, 1fr);
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 16px !important;
+}
+.imgCorrection {
+  width: 20px;
+}
+.p-2 {
+  padding: 0.5rem !important;
+  max-height: 280px;
+  max-width: 150px;
+}
+#cointener {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#beerBarNav {
+  margin-left: 10px;
+}
+/* beer Details css*/
+.detail-img {
+  vertical-align: middle;
+  height: 600px;
+  width: 300px;
+}
+#beerDetails {
+  grid-template-columns: repeat(2, 1fr);
+}

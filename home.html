@@ -16,18 +16,19 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="./beer.css" />
+    <link rel="stylesheet" type="text/css" href="./home.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Beer shop</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="">Beer bar </a>
+        <a  id="beerBarNav" class="navbar-brand"  href="http://127.0.0.1:5501/home.html">Beer bar </a>
         <div>
           <ul class="navbar-nav" >
-            <li><a class="dropdown-item "  href="">All Beers</a></li>
-            <li><a class="dropdown-item"  href="">Random Beer</a></li>
+            <li><a class="dropdown-item" onclick="showAllBeers()" href="http://127.0.0.1:5501/beers.html">All Beers</a></li>
+            <li><a class="dropdown-item"  href="http://127.0.0.1:5501/beerDetails.html">Random Beer</a></li>
         </div>
         <button
           class="navbar-toggler"
@@ -76,6 +77,18 @@
           </div>
           </div>
       </div>
-      <script src="./beer.js"></script>
+      <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Action
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </div> 
+      <script src="scripts/home.js"></script>
   </body>
 </html>
