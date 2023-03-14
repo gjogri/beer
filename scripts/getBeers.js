@@ -1,14 +1,20 @@
 let cointener = document.getElementById("cointener");
-console.log(apiData);
+var beerDetails = document.getElementById("beerDetails");
+beerDetails.style.display = "none";
+
 let singleBeer = apiData;
-if (apiData) {
-  apiData.forEach((singleBeer) => {
-    appendSingleBeer(singleBeer);
-  });
-} else {
-  getDataFromApi();
+var currentURL = window.location.href;
+if (currentURL) {
+  if (apiData) {
+    apiData.forEach((singleBeer) => {
+      appendDeatilsBeer(singleBeer);
+    });
+  } else {
+    getDataFromApi();
+  }
 }
-function appendSingleBeer(beer) {
+
+function appendDeatilsBeer(beer) {
   const card = document.createElement("div");
   card.className = "card bg-light";
   const cardImg = document.createElement("img");
@@ -34,13 +40,22 @@ function appendSingleBeer(beer) {
   const cardFooter = document.createElement("div");
   cardFooter.className = "card-footer";
   const cardButton = document.createElement("button");
-  cardButton.className = "btn btn-sm btn-primary";
+  cardButton.className = "btn btn-sm btn-info";
   cardButton.innerText = "details";
+
   cardButton.addEventListener("click", async (e) => {
     try {
-      const response = await fetch(`${BASE_URL}/${beer.id}`);
-      const data = await response.json();
-      beerDetailsPage(data[0]);
+      cointener.innerHTML = " ";
+      beerDetails.style.display = "block";
+
+      let options = {
+        method: "GET",
+        url: `https://api.punkapi.com/v2/beers/${beer.id}`,
+      };
+
+      axios.request(options).then((singleBeer) => {
+        beerDeatils(singleBeer);
+      });
     } catch (err) {
       console.error(err);
     }

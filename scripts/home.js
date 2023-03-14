@@ -11,7 +11,7 @@ function getDataFromApi() {
       console.log(error);
     });
 }
-
+// https://api.punkapi.com/v2/
 const apiData = JSON.parse(localStorage.getItem("apiData"));
 console.log(apiData);
 if (apiData) {

@@ -97,11 +97,41 @@ nav li {
   margin-left: 10px;
 }
 /* beer Details css*/
-.detail-img {
+/* .detail-img {
   vertical-align: middle;
   height: 600px;
   width: 300px;
-}
+} */
 #beerDetails {
   grid-template-columns: repeat(2, 1fr);
+}
+.detail-img {
+  height: 600px;
+}
+#beerDetails {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.roww {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  border-top: 1px solid black;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.li-deatils {
+  margin: left 3px;
+}
+.backButtonStyle {
+  width: calc(100% / 10);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.displayNone {
+  display: none !important;
+}
+#pagesButton {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
