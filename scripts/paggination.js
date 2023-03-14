@@ -25,13 +25,12 @@ previusButton.addEventListener("click", function () {
       pageNumberNext.innerText = currentPage + 1;
 
       response.data.forEach((beer) => {
-        appendDeatilsBeer(beer);
+        appendBeer(beer);
       });
     })
     .catch((error) => {
       console.error(error);
     });
-  console.log("tesdt");
 });
 
 nextButton.addEventListener("click", function () {
@@ -56,7 +55,7 @@ nextButton.addEventListener("click", function () {
       cointener.innerHTML = " ";
       //   addtingToCointener(response.data);
       response.data.forEach((beer) => {
-        appendDeatilsBeer(beer);
+        appendBeer(beer);
       });
     })
     .catch((error) => {

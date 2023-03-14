@@ -7,14 +7,15 @@ var currentURL = window.location.href;
 if (currentURL) {
   if (apiData) {
     apiData.forEach((singleBeer) => {
-      appendDeatilsBeer(singleBeer);
+      console.log(singleBeer, "inGetBEERS");
+      appendBeer(singleBeer);
     });
   } else {
     getDataFromApi();
   }
 }
 
-function appendDeatilsBeer(beer) {
+function appendBeer(beer) {
   const card = document.createElement("div");
   card.className = "card bg-light";
   const cardImg = document.createElement("img");
