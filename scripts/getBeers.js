@@ -39,3 +39,18 @@ function appendBeer(beer) {
   cointener.appendChild(card);
   return card;
 }
+const allPerPages = document.querySelectorAll(".beers-per-page");
+
+for (let beersPerPage of allPerPages) {
+  beersPerPage.addEventListener("click", async (e) => {
+    cointener.innerHTML = " ";
+    e.preventDefault();
+    itemsPerPage = Number(e.target.dataset.value);
+    const fetchUrl = `https://api.punkapi.com/v2/beers?per_page=${itemsPerPage}`;
+    const response = await axios.get(fetchUrl);
+
+    response.data.forEach((beer) => {
+      appendBeer(beer);
+    });
+  });
+}

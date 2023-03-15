@@ -42,29 +42,33 @@
           </div>
           </span>
       </nav>  
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-          Dropdown button
+      <div id="dropdownBtn"> 
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+         Items Per Page 
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item beers-per-page "  data-value="10">10 beers</a></li>
+          <li><a class="dropdown-item beers-per-page " data-value="20" >20 beers</a></li>
+          <li><a class="dropdown-item beers-per-page" data-value="30" >30 beers</a></li>
+          <li><a class="dropdown-item beers-per-page" data-value="40" >40 beers</a></li>
+          <li><a class="dropdown-item beers-per-page" data-value="50" >50 beers</a></li>
+         
+        </ul>
       </div>
       <div class="btn-group">
-        <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Action
+        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+         Sort By
         </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
-      </div> 
-     
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </div>
+    </div>
       <div id="cointener"  class="item-grid">
         
       </div>
