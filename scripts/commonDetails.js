@@ -27,15 +27,15 @@ function beerDeatils(singleBeer) {
   cardBody.append(description);
   const alcohol = document.createElement("p");
   alcohol.classList.add("card-text");
-  alcohol.innerText = "Alcohol:" + " " + beer.abv + " " + " %";
+  alcohol.innerText = "Alcohol: " + beer.abv + "  %";
   cardBody.append(alcohol);
   const brewed = document.createElement("p");
   brewed.classList.add("card-text");
-  brewed.innerText = "Brewed:" + " " + beer.first_brewed;
+  brewed.innerText = "Brewed: " + beer.first_brewed;
   cardBody.append(brewed);
   const bitterness = document.createElement("p");
   bitterness.classList.add("card-text");
-  bitterness.innerText = "Bitterness:" + " " + beer.ibu + " " + " IBU";
+  bitterness.innerText = "Bitterness: " + beer.ibu + "  IBU";
 
   cardBody.append(bitterness);
   // Card Footer
@@ -55,26 +55,14 @@ function beerDeatils(singleBeer) {
   const cardButton = document.createElement("button");
   cardButton.className = "btn btn-sm btn-primary backButtonStyle";
   cardButton.innerText = "BACK";
-  cardButton.addEventListener("click", (e) => {
-    console.log(window.location.href);
-    if (window.location.href.includes("home.html")) {
-      window.location.href = "http://127.0.0.1:5501/home.html";
-      return;
-    }
-    if (window.location.href.includes("beers.html")) {
-      window.location.href = "http://127.0.0.1:5501/beers.html";
-      return;
-    }
-    if (window.location.href.includes("beerDetails.html")) {
-      window.location.href = "http://127.0.0.1:5501/home.html";
-      return;
-    }
-  });
+  cardButton.addEventListener(
+    "click",
+    () => (window.location.href = document.referrer)
+  );
 
   card.append(cardHeader, cardBody, cardFooter);
   perentDiv.append(imgDiv, card);
   perentDiv.classList.add("roww");
 
-  beerDetails.appendChild(cardButton);
-  beerDetails.appendChild(perentDiv);
+  beerDetails.append(cardButton, perentDiv);
 }

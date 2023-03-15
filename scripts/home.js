@@ -1,20 +1,16 @@
-console.log("connected");
-console.log("test");
-
 function getDataFromApi() {
   axios
     .get("https://api.punkapi.com/v2/beers")
     .then((response) => {
       localStorage.setItem("apiData", JSON.stringify(response.data));
+      response.data.forEach((singleBeer) => appendBeer(singleBeer));
     })
-    .catch((error) => {
-      console.log(error);
-    });
+    .catch((error) => console.log(error));
 }
-// https://api.punkapi.com/v2/
+
 const apiData = JSON.parse(localStorage.getItem("apiData"));
-console.log(apiData);
 if (apiData) {
+  apiData.forEach((singleBeer) => appendBeer(singleBeer));
 } else {
   getDataFromApi();
 }
