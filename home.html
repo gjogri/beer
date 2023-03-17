@@ -36,8 +36,8 @@
           <span></span>
           <ul class="navbar-nav mr-auto"></ul>
           <div class="navbar-nav d-flex justify-content-end" > 
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-          <button  type="button" class="btn btn-info">
+          <input  id="search"type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <button  onclick="search()" type="button" class="btn btn-info">
             search
           </button>
           </div>
@@ -68,17 +68,7 @@
           </div>
           </div>
       </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Action
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
-      </div>
+      <script src="scripts/search.js"></script>
+      <script src="scripts/beerDetails.js"></script>
   </body>
 </html>

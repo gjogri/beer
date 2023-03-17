@@ -134,3 +134,10 @@ nav li {
   font-size: larger !important;
   font-weight: bold;
 }
+#dropdownBtn {
+  margin-top: 20px;
+  margin-left: 22px;
+}
+.hidden {
+  display: none;
+}

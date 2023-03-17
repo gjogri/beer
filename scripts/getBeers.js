@@ -1,6 +1,6 @@
 let cointener = document.getElementById("cointener");
 var beerDetails = document.getElementById("beerDetails");
-
+const beerName = window.location.href.split("name=");
 function appendBeer(beer) {
   const card = document.createElement("div");
   card.className = "card bg-light";
@@ -52,5 +52,17 @@ for (let beersPerPage of allPerPages) {
     response.data.forEach((beer) => {
       appendBeer(beer);
     });
+  });
+}
+
+if (window.location.href.includes("name")) {
+  let optionsWitName = {
+    method: "GET",
+    url: `https://api.punkapi.com/v2/beers?beer_name=${beerName[1]}`,
+  };
+  console.log(optionsWitName);
+  axios.request(optionsWitName).then((singleBeer) => {
+    cointener.innerHTML = " ";
+    appendBeer(singleBeer.data[0]);
   });
 }

@@ -31,15 +31,16 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarText">
           <span></span>
           <ul class="navbar-nav mr-auto"></ul>
-          <div  id="searchDiv" class="navbar-nav" > 
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-          <button  type="button" class="btn btn-info">
-            search
-          </button>
-          </div>
+          <div class="navbar-nav d-flex justify-content-end" > 
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button  type="button" class="btn btn-info">
+              search
+            </button>
+            </div>
           </span>
       </nav>  
       <div id="dropdownBtn"> 
@@ -79,8 +80,10 @@
       <p  id ="pageNumberNext" class="larger" style="display: inline-block;">2</p>
       <button id="nextButton" type="button" class="btn btn-outline-secondary" > Next -></button>
       </div>
+      <script src="scripts/search.js"></script>
       <script src="scripts/getBeers.js"></script>
       <script src="scripts/home.js"></script>
       <script src="scripts/paggination.js"></script>
+     
   </body>
 </html>
