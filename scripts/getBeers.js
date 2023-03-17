@@ -63,6 +63,10 @@ if (window.location.href.includes("name")) {
   console.log(optionsWitName);
   axios.request(optionsWitName).then((singleBeer) => {
     cointener.innerHTML = " ";
-    appendBeer(singleBeer.data[0]);
+    if (singleBeer.data != null) {
+      singleBeer.data.forEach((beer) => appendBeer(beer));
+    } else {
+      alert("eror");
+    }
   });
 }
