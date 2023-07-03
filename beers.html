@@ -14,35 +14,32 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="./home.html">Beer bar </a>
-        <div>
-          <ul class="navbar-nav" >
-            <li><a class="dropdown-item "  href="./beers.html">All Beers</a></li>
-            <li><a class="dropdown-item"  href="./beerDetails.html">Random Beer</a></li>
-        </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+      <a  id="beerBarNav" class="navbar-brand"  href="./home.html">Beer bar </a>
+      <div>
+        <ul class="navbar-nav" >
+          <li><a class="dropdown-item" onclick="showAllBeers()" href="./beers.html">All Beers</a></li>
+          <li><a class="dropdown-item"  href="./beerDetails.html">Random Beer</a></li>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarText">
+        <div class="navbar-nav " > 
+        <input  id="search"type="search" class="form-control rounded " placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <button  onclick="search()" type="button" class="btn btn-info">
+          search
         </button>
-        
-        <div class="collapse navbar-collapse" id="navbarText">
-          <span></span>
-          <ul class="navbar-nav mr-auto"></ul>
-          <div class="navbar-nav d-flex justify-content-end" > 
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-            <button  type="button" class="btn btn-info">
-              search
-            </button>
-            </div>
-          </span>
-      </nav>  
+        </div>
+        </span>
+    </nav>   
       <div id="dropdownBtn"> 
       <div class="btn-group">
         <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,15 +59,17 @@
          Sort By
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#" id="sort-by-name-asc">A - Z </a></li>
+          <li><a class="dropdown-item" href="#" id="sort-by-name-des">Z - A </a></li>
+          <li><a class="dropdown-item" href="#" id="sort-by-abv-asc">Bitterness + </a></li>
+          <li><a class="dropdown-item" href="#" id="sort-by-abv-des">Bitterness - </a></li>
+         
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        
         </ul>
       </div>
     </div>
-      <div id="cointener"  class="item-grid">
+      <div id="cointener"  class="item-grid grid">
         
       </div>
       <div id ="pagesButton">

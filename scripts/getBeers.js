@@ -1,6 +1,7 @@
 let cointener = document.getElementById("cointener");
 var beerDetails = document.getElementById("beerDetails");
 const beerName = window.location.href.split("name=");
+let currentBeerList = [];
 function appendBeer(beer) {
   const card = document.createElement("div");
   card.className = "card bg-light";
@@ -40,6 +41,7 @@ function appendBeer(beer) {
   return card;
 }
 const allPerPages = document.querySelectorAll(".beers-per-page");
+const pagesButton = document.getElementById("pagesButton");
 
 for (let beersPerPage of allPerPages) {
   beersPerPage.addEventListener("click", async (e) => {
@@ -55,18 +57,70 @@ for (let beersPerPage of allPerPages) {
   });
 }
 
-if (window.location.href.includes("name")) {
+async function getByName() {
+  if (!window.location.href.includes("name")) return;
+
   let optionsWitName = {
     method: "GET",
     url: `https://api.punkapi.com/v2/beers?beer_name=${beerName[1]}`,
   };
-  console.log(optionsWitName);
-  axios.request(optionsWitName).then((singleBeer) => {
-    cointener.innerHTML = " ";
-    if (singleBeer.data != null) {
-      singleBeer.data.forEach((beer) => appendBeer(beer));
-    } else {
-      alert("eror");
-    }
-  });
+
+  const singleBeer = await axios.request(optionsWitName);
+  cointener.innerHTML = " ";
+  if (singleBeer.data != null) {
+    singleBeer.data.forEach((beer) => appendBeer(beer));
+    pagesButton.style.display = "none";
+  } else {
+    alert("error");
+  }
 }
+
+getByName();
+
+//SORTING
+
+document.querySelector("#sort-by-name-asc").addEventListener("click", (e) => {
+  e.preventDefault();
+  cointener.innerHTML = " ";
+  apiData.sort((a, b) => {
+    if (a.name > b.name) return 1;
+    if (a.name < b.name) return -1;
+    return 0;
+  });
+  apiData.forEach((beer) => {
+    console.log(beer);
+    appendBeer(beer);
+  });
+});
+
+document.querySelector("#sort-by-name-des").addEventListener("click", (e) => {
+  e.preventDefault();
+  cointener.innerHTML = " ";
+  apiData.sort((a, b) => {
+    if (a.name < b.name) return 1;
+    if (a.name > b.name) return -1;
+    return 0;
+  });
+  console.log(apiData);
+  apiData.forEach((beer) => {
+    appendBeer(beer);
+  });
+});
+document.querySelector("#sort-by-abv-asc").addEventListener("click", (e) => {
+  e.preventDefault();
+  cointener.innerHTML = " ";
+  apiData.sort((a, b) => a.abv - b.abv);
+  apiData.forEach((beer) => {
+    console.log(beer);
+    appendBeer(beer);
+  });
+});
+
+document.querySelector("#sort-by-abv-des").addEventListener("click", (e) => {
+  e.preventDefault();
+  cointener.innerHTML = " ";
+  apiData.sort((a, b) => b.abv - a.abv);
+  apiData.forEach((beer) => {
+    appendBeer(beer);
+  });
+});

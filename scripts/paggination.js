@@ -1,7 +1,6 @@
 console.log("paggination is okej");
 currentPage = 1;
 itemsPerPage = 20;
-// previusButton.classList.add("disabled");
 previusButton.addEventListener("click", function () {
   if (currentPage === 1) {
     console.log("you re on the first Page");
@@ -18,7 +17,7 @@ previusButton.addEventListener("click", function () {
     .request(fetchUrl)
     .then((response) => {
       console.log(response);
-      //   console.log(response, "response PREVIUS BUTTON");
+
       cointener.innerHTML = " ";
       pageNumber.innerText = currentPage;
       pageNumberPrevius.innerText = currentPage - 1;
@@ -53,7 +52,6 @@ nextButton.addEventListener("click", function () {
       pageNumberPrevius.innerText = currentPage - 1;
       pageNumberNext.innerText = currentPage + 1;
       cointener.innerHTML = " ";
-      //   addtingToCointener(response.data);
       response.data.forEach((beer) => {
         appendBeer(beer);
       });

@@ -28,7 +28,6 @@ body {
 #paragraphs {
   margin-left: 40px;
   padding-right: 40px;
-  /* max-width: 100%; */
 }
 nav li {
   padding: 10px;
@@ -73,7 +72,6 @@ nav li {
   /* margin-right: -150px; */
 }
 .item-grid {
-  grid-template-columns: repeat(2, 1fr);
   display: grid !important;
   grid-template-columns: repeat(5, 1fr) !important;
   gap: 16px !important;
@@ -140,4 +138,20 @@ nav li {
 }
 .hidden {
   display: none;
+}
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media screen and (max-width: 461px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
 }
